@@ -1,27 +1,25 @@
-import React, { Component } from 'react';
-import {Card, Col, Container, Row} from "react-bootstrap";
-import { useNavigate } from 'react-router-dom';
+import React,  {useContext} from 'react';
+import {Row} from "react-bootstrap";
+import {observer} from "mobx-react-lite";
+import {Context} from "../index";
+//import { useNavigate } from 'react-router-dom';
 import UniversityItem from './UniversityItem';
+import { toJS } from "mobx";
 
 
-const UniversityList = () => {
 
-    const navigate = useNavigate()
+const UniversityList = observer(() => {
+    const {university} = useContext(Context)
 
-    const universities = [
-        {id: 1, name: "BSU", adress: "Minsk street 20", manager_id: 1,coords: "57.85420, 122.45600"},
-        {id: 2, name: "VSU", adress: "Vitebsk street 20", manager_id: 1,coords: "57.85420, 122.45600"},
-        {id: 3, name: "PSU", adress: "Polotsk street 20", manager_id: 1,coords: "57.85420, 122.45600"},
-        {id: 4, name: "GSU", adress: "Gomel street 20", manager_id: 1,coords: "57.85420, 122.45600"},
-
-    ];
-
+    
     return (
-        <Row>
-            {universities.map(univer => 
-                <UniversityItem key={univer.id} university={univer}/> )}
+        <Row className="d-flex">
+            {university.university.map(university =>
+            <UniversityItem key={university.id} university={university}/>
+)}
         </Row>
+        
     );
-};
+});
 
 export default UniversityList;

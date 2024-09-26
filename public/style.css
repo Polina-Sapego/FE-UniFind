@@ -1,0 +1,56 @@
+body {
+    background-color: #eff3f5; /* Пример цвета фона */
+}
+
+.container {
+  
+}
+
+h1 {
+  
+}
+
+.university-image {
+    width: 100%;
+    max-width: 600px;
+    border: 2px solid #4682b4;
+    border-radius: 10px;
+    
+}
+.profile-button {
+    width: 50px; /* Диаметр круга */
+    height: 50px; /* Диаметр круга */
+    border-radius: 50%; /* Делает круглый */
+    overflow: hidden; /* Обрезает изображение круглым */
+    padding: 0; /* Убирает внутренние отступы */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 6px;
+}
+.image-left {
+    left: 10px;
+    top:10px;
+    margin-right: 20px; /* Отступ справа от изображения */
+    width: 100px; /* Ширина изображения */
+    height: 1000px; /* Автоматическая высота для сохранения пропорций */
+    border-radius: 10px; /* Закругление углов */
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Заполняет круглую область изображением */
+    border-radius: 50%; /* Делает изображение круглым, если оно не квадратное */
+}
+
+.faculty-row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  
+  .faculty-item {
+    margin-right: 10px;
+  }
+  

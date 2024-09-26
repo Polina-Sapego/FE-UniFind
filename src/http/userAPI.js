@@ -14,6 +14,7 @@ export const login = async (login, password) => {
     console.log(data)
     localStorage.setItem('user', data)
     localStorage.setItem('token', data.token)
+    console.log(localStorage.getItem('token'))
     // return jwtDecode(data.token)
     return data
 }

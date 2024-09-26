@@ -1,54 +1,99 @@
 import {makeAutoObservable} from "mobx";
 
 export default class UniversityStore {
-        _id;
-        _name;
-        _adress;
-        _manager_id;
-        _coords;
+        // _id;
+        // _name;
+        // _adress;
+        // _manager_id;
+        // _coords;
 
     constructor() {
+        this._university = [
+        ]
+        this._faculties = [
+             
+        ]
+       
+        this._specialities = [
+            
+        ]
+
+        this._univercity_specialties = [
+            {id:1, faculty_id: 6, speciality_id: 20},
+            {id:2, faculty_id: 6, speciality_id: 21},
+            {id:3, faculty_id: 6, speciality_id: 22},
+            {id:4, faculty_id: 6, speciality_id: 23},
+            {id:5, faculty_id: 6, speciality_id: 24},
+            {id:6, faculty_id: 6, speciality_id: 25},
+        ]
+        // this._name =[]
+        // this._id = []
+        // this._adress = []
+        // this._manager_id = []
+        // this._coords = []
         makeAutoObservable(this)
     }
 
-    setId(id) {
-        this._id = id;
+    setUniversities(university) {
+        this._university = university;
     }
 
-    setName(name) {
-        this._name = name;
+    setFaculties(faculties) {
+        this._faculties = faculties;
+    }
+    get university() {
+        return this._university
     }
 
-    setAdress(adress) {
-        this._adress = adress;
+    get faculties() {
+        return this._faculties
     }
 
-    setManagerId(manager_id) {
-        this._manager_id = manager_id;
+    get specialities() {
+        return this._specialities
     }
 
-    setCoords(coords) {
-        this._coords = coords;
+    setSpecialities(specialities) {
+        this._specialities = specialities;
     }
 
-    get id() {
-        return this._id;
+    setUnivercity_specialties(univercity_specialties) {
+        this._univercity_specialties = univercity_specialties;
     }
 
-    get name() {
-        return this._name;
+    get univercity_specialties() {
+        return this._univercity_specialties;
     }
+    // setSpecialities(pecialities ) {
+    //     this._adress = adress;
+    // }
 
-    get adress() {
-        return this._adress;
-    }
+    // setManagerId(manager_id) {
+    //     this._manager_id = manager_id;
+    // }
 
-    get manager_id() {
-        return this._manager_id;
-    }
+    // setCoords(coords) {
+    //     this._coords = coords;
+    // }
 
-    get coords() {
-        return this._coords;
-    }
+    // get id() {
+    //     return this._id;
+    // }
+
+    // get name() {
+    //     return this._name;
+    // }
+
+    // get adress() {
+    //     return this._adress;
+    // }
+
+    // get manager_id() {
+    //     return this._manager_id;
+    // }
+
+    // get coords() {
+    //     return this._coords;
+    // }
 
 }

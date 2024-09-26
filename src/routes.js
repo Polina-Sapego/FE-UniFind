@@ -1,4 +1,4 @@
-import Catalog from "./components/UniversityList";
+import Catalog from "./pages/UniversityPage";
 import UserInfo from "./pages/UserInfo";
 import Faculty from "./pages/Faculty";
 import Auth from "./pages/Auth";
@@ -38,22 +38,27 @@ export const authRoutes = [
         Component: Catalog
     },
     {
-        path: FACULTY_ROUTE,
+        path: FACULTY_ROUTE + '/:id',
         Component: Faculty
     },
     {
-        path: SPECIALITY_ROUTE,
+        path: SPECIALITY_ROUTE + '/:id',
         Component: Speciality
     },
     {
         path: FEEDBACK_ROUTE,
         Component: Feedback
     },
-    {
-        path: CATALOG_ROUTE + '/:id',
-        Component: UniversityPage
+    // {
+    //     path: CATALOG_ROUTE + '/:id',
+    //     Component: Faculty
 
-    },
+    // },
+    // {
+    //      path: FACULTY_ROUTE + '/:id',
+    //     Component: Special
+
+    //  },
     {
         path: CABINET_ROUTE,
         Component: PerosnalCabinet

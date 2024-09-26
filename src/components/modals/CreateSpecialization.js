@@ -2,21 +2,22 @@ import React, { useContext, useState } from 'react';
 import {Form, Modal} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { Context } from "../../index";
-import { createFaculty } from "../../http/facultyAPI";
+import { createSpecialization } from "../../http/facultyAPI";
 
-const CreateFaculty = ({show, onHide}) => {
-    const {faculties} = useContext(Context);
+const CreateSpecialization = ({show, onHide}) => {
+    
     const [name, setName] = useState('');
-    const [universities_id, setUniversities_id] = useState(0);
- 
+    const [code, setCode] = useState(0);
+    const [description, setDescription] = useState('');
 
     const addFaculty = () => {
         const universityData = {
             name,
-            universities_id,
+            code,
+            description
         };
 
-        createFaculty(universityData)
+        createSpecialization(universityData)
         .then(data => {
             console.log('University created:', data); // Для отладки, чтобы увидеть ответ сервера
             onHide();
@@ -25,8 +26,6 @@ const CreateFaculty = ({show, onHide}) => {
             console.error('Error creating university:', error.response || error.message || error);
         });
 };
-
-
 
     return (
         <Modal
@@ -37,28 +36,29 @@ const CreateFaculty = ({show, onHide}) => {
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Добавить факультет
+                    Добавить специальность
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Form>
                     <Form.Control
-                        // value={value}
-                        // onChange={e => setValue(e.target.value)}
-                        value={name}
-                        onChange={e => setName(e.target.value)}
-                        placeholder={"Введите название факультета"}
+                         value={name}
+                         onChange={e => setName(e.target.value)}
+                        placeholder={"Введите название специальности"}
                         style={{ marginBottom: '15px' }}
                     />
                     <Form.Control
-                        // value={value}
-                        // onChange={e => setValue(e.target.value)}
-                        value={universities_id}
-                        onChange={e => setUniversities_id(e.target.value)}
-                        placeholder={"Введите номер университета"}
+                         value={code}
+                        onChange={e => setCode(e.target.value)}
+                        placeholder={"Введите баллы на специальность"}
                         style={{ marginBottom: '15px' }}
                     />
-                     
+                    <Form.Control
+                        value={description}
+                        onChange={e => setDescription(e.target.value)}
+                        placeholder={"Введите описание специальности"}
+                        style={{ marginBottom: '15px' }}
+                    />
                 </Form>
             </Modal.Body>
             <Modal.Footer>
@@ -70,4 +70,4 @@ const CreateFaculty = ({show, onHide}) => {
         ;
 };
 
-export default CreateFaculty
+export default CreateSpecialization;

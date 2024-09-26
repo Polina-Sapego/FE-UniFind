@@ -1,32 +1,58 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import { Card } from 'react-bootstrap';
 import { fetchSpecial } from '../http/special';
 import { Context } from '..';
-
-
+import { Button, Container } from 'react-bootstrap';
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import SpecialityList from '../components/SpecialtyList';
+import {useParams} from 'react-router-dom'
+import {fetchOneFaculty} from "../http/facultyAPI";
+import {fetchSpeciality} from "../http/facultyAPI";
 
 const Speciality = observer(() => {
-//     const {Special} = useContext(Context)
-//     useEffect(() => {
-//     fetchSpecial().then(data => Special.setSpecial(data))
-// },  [])
-const specs = [
-{ id: 1, name: 'ПОКС' },
-{ id: 2, name: 'ПОИТ' },
-{ id: 3, name: 'МО' },
-{ id: 4, name: 'УИР' },
-];
+  
+  const [ faculties, setFaculties] = useState({info: []})
+  const { specialities, univercity_specialties } = useContext(Context);
+  const {id} = useParams()
+  
 
-return (
-<div>
-{specs.map((spec) => (
-<Card key={spec.id} className="mb-3">
-<Card.Body>{spec.name}</Card.Body>
-</Card>
-))}
-</div>
-);
-});
+useEffect(() => {
+  fetchSpeciality()
+  .then(data => {
+     specialities.setSpecialities(data);
+     console.log(data); // Выводим данные в консоль
+ });
+}, []);
 
-export default Speciality;
+
+// useEffect(() => {
+//   fetchSpeciality()
+//   .then(data => {
+//     univercity_specialties.setUnivercity_specialties(data);
+//      console.log(data); // Выводим данные в консоль
+//  });
+// }, []);
+
+  useEffect(() => {
+    fetchOneFaculty(id)
+     .then(data => setFaculties(data))
+     
+  }, [])
+
+ 
+    return (
+      <Container>
+       
+  
+        <Row className='mt-2 justify-content-center'>
+          <Col>
+    <SpecialityList facultyId={id}/>
+          </Col>
+        </Row>
+      </Container>
+    );
+  });
+  
+  export default Speciality

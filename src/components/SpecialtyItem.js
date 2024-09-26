@@ -2,9 +2,9 @@ import React from 'react';
 import { Card, Col} from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
 import { FACULTY_ROUTE } from '../utils/consts';
-import Image from "react-bootstrap/Image";
 
-const UniversityItem = ({university}) => {
+
+const SpecialtyItem = ({specialities}) => {
 
     const navigate = useNavigate()
 
@@ -16,14 +16,14 @@ const UniversityItem = ({university}) => {
     //     }, {});
 
     return (
-        <Col className="mt-3" onClick={() => navigate(FACULTY_ROUTE + '/' + university.id)}>
-            <Card style={{width: 300, cursor: 'pointer'}} border={"light"}>
-            <Image width={300} height={150} src={'http://localhost:5555/' + university.img}
-            />
-                <div ><h6 className="d-flex align-items-center">{university.name}</h6></div>
-                <div>{university.adress}</div>
-                <div>{university.number}</div>
-
+        <Col className="mt-3" onClick={() => navigate( )}>
+            <Card style={{width: 1110, cursor: 'pointer'}} border={"light"}>
+        
+          
+                <div ><h6 className="d-flex align-items-center">{specialities.name}</h6></div>
+                <div>{specialities.description}</div>
+                <div>Колличество баллов на бюджет: {specialities.code}</div>
+                <div>Колличество баллов на платное: {specialities.code-20}</div>
                 {/* {Object.entries(filteredUniversity).map(([key, value]) => (
                     <div key={key} className="mb-3">
                         <strong>{key}: </strong>
@@ -36,4 +36,4 @@ const UniversityItem = ({university}) => {
     );
 };
 
-export default UniversityItem;
+export default SpecialtyItem;
