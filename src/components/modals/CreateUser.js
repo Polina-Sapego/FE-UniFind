@@ -18,8 +18,7 @@ const CreateUser = ({show, onHide}) => {
             <Modal.Body>
                 <Form>
                     <Form.Control
-                        // value={value}
-                        // onChange={e => setValue(e.target.value)}
+                       
                         placeholder={"Введите логин пользователя"}
                         style={{ marginBottom: '15px' }}
 

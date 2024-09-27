@@ -28,12 +28,10 @@ const Auth = observer(() => {
             }
             console.log(data)
             user.setUser(user)
-            // const user = {login: "123321", password: "Polina1"};
-            // user.setUser(user)
             user.setIsAuth(true)
             navigate(HOME_ROUTE)
         } catch (e) {
-            // alert(e.response.data.message)
+          
             console.log("ты балбес");
             console.log(e.response.data.message);
         }
@@ -59,17 +57,7 @@ const Auth = observer(() => {
                         onChange={e => setPassword(e.target.value)}
                         type='password'
                     />
-                    {/* {isLogin?
-                    <div></div>
-                    :
-                    // <Form.Control
-                    //     className="mt-3"
-                    //     placeholder="Input your email..."
-                    //     value={email}
-                    //     onChange={e => setEmail(e.target.value)}
-                    // />
-                     <div></div>
-                    } */}
+            
                     <Row className="d-flex justify-content-between mt-3">
                         {isLogin ?
                             <div>

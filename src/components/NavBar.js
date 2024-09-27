@@ -6,7 +6,6 @@ import { observer } from "mobx-react-lite";
 import { useNavigate, NavLink } from "react-router-dom";
 import image2 from 'C:/true-project/src/rub/1674365337_3-31.jpg';
 import Col from "react-bootstrap/Col";
-//import image3 from 'C:/true-project/src/rub/_8f1b8dc9-b2c2-4fd3-95bc-b3f889007e50.jpg';
 
 const NavBar = observer(() => {
     const { user } = useContext(Context);

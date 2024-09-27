@@ -1,12 +1,7 @@
 import {makeAutoObservable} from "mobx";
 
 export default class UniversityStore {
-        // _id;
-        // _name;
-        // _adress;
-        // _manager_id;
-        // _coords;
-
+       
     constructor() {
         this._university = [
         ]
@@ -26,11 +21,7 @@ export default class UniversityStore {
             {id:5, faculty_id: 6, speciality_id: 24},
             {id:6, faculty_id: 6, speciality_id: 25},
         ]
-        // this._name =[]
-        // this._id = []
-        // this._adress = []
-        // this._manager_id = []
-        // this._coords = []
+     
         makeAutoObservable(this)
     }
 
@@ -64,36 +55,5 @@ export default class UniversityStore {
     get univercity_specialties() {
         return this._univercity_specialties;
     }
-    // setSpecialities(pecialities ) {
-    //     this._adress = adress;
-    // }
-
-    // setManagerId(manager_id) {
-    //     this._manager_id = manager_id;
-    // }
-
-    // setCoords(coords) {
-    //     this._coords = coords;
-    // }
-
-    // get id() {
-    //     return this._id;
-    // }
-
-    // get name() {
-    //     return this._name;
-    // }
-
-    // get adress() {
-    //     return this._adress;
-    // }
-
-    // get manager_id() {
-    //     return this._manager_id;
-    // }
-
-    // get coords() {
-    //     return this._coords;
-    // }
-
+    
 }

@@ -6,8 +6,8 @@ const $host = axios.create({
 
 const $authHost = axios.create({ 
     baseURL: 'http://localhost:5555/',
-    maxContentLength: 50 * 1024 * 1024, // 50MB
-    maxBodyLength: 50 * 1024 * 1024 // 50MB
+    maxContentLength: 50 * 1024 * 1024, 
+    maxBodyLength: 50 * 1024 * 1024 
 })
 
 const authInterceptor = config => {

@@ -22,18 +22,9 @@ useEffect(() => {
   fetchSpeciality()
   .then(data => {
      specialities.setSpecialities(data);
-     console.log(data); // Выводим данные в консоль
+     console.log(data);
  });
 }, []);
-
-
-// useEffect(() => {
-//   fetchSpeciality()
-//   .then(data => {
-//     univercity_specialties.setUnivercity_specialties(data);
-//      console.log(data); // Выводим данные в консоль
-//  });
-// }, []);
 
   useEffect(() => {
     fetchOneFaculty(id)

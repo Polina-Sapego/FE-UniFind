@@ -5,16 +5,12 @@ import {Context} from "../index";
 //import { useNavigate } from 'react-router-dom';
 import FacultyItem from './FacultyItem';
 
-
-
-
-// const FacultyList = observer((facultyId) => {
 const FacultyList = ({facultyId}) => {
 
     const {faculties} = useContext(Context);
     
      faculties.faculties.map(fac => console.log(fac))
-// console.log(universityid)
+
 const filteredFaculties = faculties.faculties.filter(faculty => parseInt(faculty.universities_id) === parseInt(facultyId));
 
 console.log(filteredFaculties);

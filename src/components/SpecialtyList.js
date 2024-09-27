@@ -2,9 +2,8 @@ import React,  {useContext} from 'react';
 import {Row} from "react-bootstrap";
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
-//import { useNavigate } from 'react-router-dom';
 import SpecialtyItem from './SpecialtyItem';
-import { toJS } from "mobx";
+
 
 
 
@@ -25,18 +24,9 @@ const SpecialtyList = ({facultyId}) => {
         }
     }
     console.log(filteredSpecialities)
-
-    // const za = specialities.specialities.filter(i => filteredSpecialitiesId.con)
-
-    // console.log(za)
-    // console.log(hu)
   
     return (
-//         <Row className="d-flex">
-//             {specialities.specialities.map(specialities =>
-//             <SpecialtyItem key={specialities.id} specialities={specialities}/>
-// )}
-//         </Row>
+
              <Row className="d-flex">
              {filteredSpecialities.map(specialities =>
              <SpecialtyItem key={specialities.id} specialities={specialities}/>
@@ -44,19 +34,5 @@ const SpecialtyList = ({facultyId}) => {
          </Row>
     );
 };
-
-// const SpecialtyList = observer(() => {
-//     const {specialities} = useContext(Context)
-
-  
-//     return (
-//         <Row className="d-flex">
-//             {specialities.specialities.map(specialities =>
-//             <SpecialtyItem key={specialities.id} specialities={specialities}/>
-// )}
-//         </Row>
-        
-//     );
-// });
 
 export default SpecialtyList;

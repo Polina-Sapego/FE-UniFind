@@ -26,15 +26,15 @@ import Special from "./pages/Special";
 
 export const authRoutes = [
     {
-        path: ADMIN_ROUTE, //unused
+        path: ADMIN_ROUTE, 
         Component: Admin
     },
     {
-        path: USER_INFO_ROUTE, //unused
+        path: USER_INFO_ROUTE,
         Component: UserInfo
     },
     {
-        path: CATALOG_ROUTE, //unused
+        path: CATALOG_ROUTE, 
         Component: Catalog
     },
     {
@@ -49,16 +49,7 @@ export const authRoutes = [
         path: FEEDBACK_ROUTE,
         Component: Feedback
     },
-    // {
-    //     path: CATALOG_ROUTE + '/:id',
-    //     Component: Faculty
-
-    // },
-    // {
-    //      path: FACULTY_ROUTE + '/:id',
-    //     Component: Special
-
-    //  },
+   
     {
         path: CABINET_ROUTE,
         Component: PerosnalCabinet

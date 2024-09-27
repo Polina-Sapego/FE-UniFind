@@ -20,40 +20,6 @@ const CreateUniversity = ({ show, onHide }) => {
         const file = e.target.files[0];
         setimg(file)
     }
-        // const options = {
-        //     maxSizeMB: 1, // Максимальный размер изображения в MB
-        //     maxWidthOrHeight: 1920, // Максимальная ширина или высота
-        //     useWebWorker: true,
-        // };
-    
-        // try {
-        //     const compressedFile = await imageCompression(file, options);
-        //     const reader = new FileReader();
-        //     reader.readAsDataURL(compressedFile);
-        //     reader.onloadend = () => {
-        //         setimg(reader.result);
-        //     };
-        // } catch (error) {
-        //     console.error('Ошибка при сжатии изображения:', error);
-        // }
-    // const addUniversity = () => {
-    //     const universityData = {
-    //         name,
-    //         adress,
-    //         manager_id,
-    //         number,
-    //         img: img,
-    //         coords
-    //     };    
-    //     createUniversity(universityData)
-    //         .then(data => {
-    //             console.log('University created:', data); // Для отладки, чтобы увидеть ответ сервера
-    //             onHide();
-    //         })
-    //         .catch(error => {
-    //             console.error('Error creating university:', error.response || error.message || error);
-    //         });
-    // };
 
     const addUniversity = () => {
         const formData = new FormData()

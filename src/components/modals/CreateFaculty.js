@@ -18,7 +18,7 @@ const CreateFaculty = ({show, onHide}) => {
 
         createFaculty(universityData)
         .then(data => {
-            console.log('University created:', data); // Для отладки, чтобы увидеть ответ сервера
+           
             onHide();
         })
         .catch(error => {
@@ -43,16 +43,14 @@ const CreateFaculty = ({show, onHide}) => {
             <Modal.Body>
                 <Form>
                     <Form.Control
-                        // value={value}
-                        // onChange={e => setValue(e.target.value)}
+             
                         value={name}
                         onChange={e => setName(e.target.value)}
                         placeholder={"Введите название факультета"}
                         style={{ marginBottom: '15px' }}
                     />
                     <Form.Control
-                        // value={value}
-                        // onChange={e => setValue(e.target.value)}
+                       
                         value={universities_id}
                         onChange={e => setUniversities_id(e.target.value)}
                         placeholder={"Введите номер университета"}

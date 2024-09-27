@@ -17,7 +17,7 @@ useEffect(() => {
    fetchFaculty()
    .then(data => {
       faculties.setFaculties(data);
-      console.log(data); // Выводим данные в консоль
+      console.log(data);
   });
 }, []);
 

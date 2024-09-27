@@ -19,7 +19,7 @@ const CreateSpecialization = ({show, onHide}) => {
 
         createSpecialization(universityData)
         .then(data => {
-            console.log('University created:', data); // Для отладки, чтобы увидеть ответ сервера
+       
             onHide();
         })
         .catch(error => {
